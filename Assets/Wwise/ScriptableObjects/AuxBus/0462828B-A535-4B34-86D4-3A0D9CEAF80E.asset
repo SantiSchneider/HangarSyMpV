@@ -1,0 +1,17 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 3872530440c207942ac00939be9241c2, type: 3}
+  m_Name: 0462828B-A535-4B34-86D4-3A0D9CEAF80E
+  m_EditorClassIdentifier: 
+  objectName: Reverb_Hangar
+  id: 3404403065
+  guid: 0462828B-A535-4B34-86D4-3A0D9CEAF80E

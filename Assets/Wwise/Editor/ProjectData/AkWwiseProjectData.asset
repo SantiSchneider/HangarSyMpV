@@ -120,8 +120,22 @@ MonoBehaviour:
     ParentPath: SoundBanks\Default Work Unit
     guid: 0fb1dc9eaf2f4a42ab78b3235481e85c
     GuidInternal: 
-    m_lastTime: -8584428784113298803
-    List: []
+    m_lastTime: -8584404489674720293
+    List:
+    - name: MainSoundbank
+      guid: a189c3032fe97742b0ed2ecfad3cf517
+      id: 534561221
+      PathAndIcons:
+      - ElementName: SoundBanks
+        ObjectType: 5
+        guid: 00000000000000000000000000000000
+      - ElementName: Default Work Unit
+        ObjectType: 12
+        guid: 0fb1dc9eaf2f4a42ab78b3235481e85c
+      - ElementName: MainSoundbank
+        ObjectType: 7
+        guid: a189c3032fe97742b0ed2ecfad3cf517
+      Path: SoundBanks\Default Work Unit\MainSoundbank
   EventWwu:
   - PhysicalPath: Events\Default Work Unit.wwu
     PathAndIcons:
@@ -216,8 +230,22 @@ MonoBehaviour:
     ParentPath: Game Parameters\Default Work Unit
     guid: 1e134cd00bc5704ba90f41eec4fdd6be
     GuidInternal: 
-    m_lastTime: -8584428584931107456
+    m_lastTime: -8584404479649692486
     List:
+    - name: Clima
+      guid: 61dbacf98e25d240ab6dd9d12f8cbde4
+      id: 1819394459
+      PathAndIcons:
+      - ElementName: Game Parameters
+        ObjectType: 5
+        guid: 00000000000000000000000000000000
+      - ElementName: Default Work Unit
+        ObjectType: 12
+        guid: 1e134cd00bc5704ba90f41eec4fdd6be
+      - ElementName: Clima
+        ObjectType: 13
+        guid: 61dbacf98e25d240ab6dd9d12f8cbde4
+      Path: Game Parameters\Default Work Unit\Clima
     - name: Health
       guid: 5d2675d5b5f5e94f88fb67b2351caf95
       id: 3677180323
@@ -457,7 +485,7 @@ MonoBehaviour:
     m_lastTime: -8584428784113156625
     List: []
   ExpandedFileSystemItemIds: 
-  ExpandedWaapiItemIds: 020000000300000004000000050000000600000007000000080000000c0000000d0000000e0000001000000012000000130000001400000017000000190000001f00000024000000
+  ExpandedWaapiItemIds: 01000000020000000300000004000000050000000600000007000000080000000c0000000d0000000e0000000f0000001000000011000000120000001300000014000000150000001700000018000000190000001f00000020000000240000006702000068020000
   AutoSyncSelection: 1
   autoPopulateEnabled: 0
   currentDataSource: 0

@@ -17,9 +17,9 @@ public class PlayerController3D : MonoBehaviour
     [Header("Physics")]
     public float gravity = -30f;
 
-    CharacterController controller;
-    Vector3 velocity;
-    float pitch;
+    private CharacterController controller;
+    private Vector3 velocity; // y component used for gravity/jump
+    private float pitch;
 
     void Awake()
     {
@@ -27,7 +27,6 @@ public class PlayerController3D : MonoBehaviour
         Cursor.lockState = CursorLockMode.Locked;
         Cursor.visible = false;
 
-        // Safety: ensure hierarchy and zeroed camera
         if (playerCamera && cameraPivot && playerCamera.transform.parent != cameraPivot)
             playerCamera.transform.SetParent(cameraPivot, worldPositionStays: false);
         if (playerCamera) playerCamera.transform.localPosition = Vector3.zero;
@@ -45,10 +44,8 @@ public class PlayerController3D : MonoBehaviour
         float mx = Input.GetAxis("Mouse X") * mouseSensitivity * Time.deltaTime;
         float my = Input.GetAxis("Mouse Y") * mouseSensitivity * Time.deltaTime;
 
-        // Yaw on body (around world up)
         transform.rotation = Quaternion.AngleAxis(mx, Vector3.up) * transform.rotation;
 
-        // Pitch on pivot only
         pitch = Mathf.Clamp(pitch - my, -pitchClamp, pitchClamp);
         if (cameraPivot) cameraPivot.localRotation = Quaternion.Euler(pitch, 0f, 0f);
     }
@@ -56,20 +53,32 @@ public class PlayerController3D : MonoBehaviour
     void Move()
     {
         bool grounded = controller.isGrounded;
-        if (grounded && velocity.y < 0f) velocity.y = -2f;
 
+        // keep grounded
+        if (grounded && velocity.y < 0f)
+            velocity.y = -2f;
+
+        // input
         float h = Input.GetAxisRaw("Horizontal");
         float v = Input.GetAxisRaw("Vertical");
         Vector3 input = Vector3.ClampMagnitude(new Vector3(h, 0f, v), 1f);
 
         float speed = Input.GetKey(KeyCode.LeftShift) ? runSpeed : walkSpeed;
-        Vector3 worldMove = transform.TransformDirection(input) * speed;
-        controller.Move(worldMove * Time.deltaTime);
+        Vector3 worldMove = transform.TransformDirection(input) * speed; // horizontal only
 
+        // jump
         if (grounded && Input.GetButtonDown("Jump"))
             velocity.y = Mathf.Sqrt(jumpHeight * -2f * gravity);
 
+        // gravity
         velocity.y += gravity * Time.deltaTime;
-        controller.Move(velocity * Time.deltaTime);
+
+        // single Move so CharacterController.velocity reflects both horizontal and vertical
+        Vector3 frameMove = new Vector3(worldMove.x, velocity.y, worldMove.z) * Time.deltaTime;
+        controller.Move(frameMove);
     }
+
+    // Optional helper if you need it elsewhere
+    public Vector3 HorizontalVelocity =>
+        new Vector3(controller.velocity.x, 0f, controller.velocity.z);
 }

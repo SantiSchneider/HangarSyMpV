@@ -1,0 +1,18 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 88433adc53b31124e94b2da8cd85efb8, type: 3}
+  m_Name: A3E6EBE5-67C3-4462-8765-0A0628D8B3AA
+  m_EditorClassIdentifier: 
+  objectName: Footsteps_Sand
+  id: 444235487
+  guid: A3E6EBE5-67C3-4462-8765-0A0628D8B3AA
+  WwiseSwitchGroupReference: {fileID: 11400000, guid: 76d535b9517e5064c90c2ef07e904cab, type: 2}

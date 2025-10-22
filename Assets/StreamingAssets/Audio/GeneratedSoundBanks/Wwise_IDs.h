@@ -11,6 +11,14 @@
 
 namespace AK
 {
+    namespace EVENTS
+    {
+        static const AkUniqueID PLAY_AMBIENT = 1562304622U;
+        static const AkUniqueID PLAY_AMBIENT_RANDOM = 4149338432U;
+        static const AkUniqueID PLAY_FOOTSTEPS = 3854155799U;
+        static const AkUniqueID PLAY_HEALTH = 3047160268U;
+    } // namespace EVENTS
+
     namespace STATES
     {
         namespace PLAYERALIVE
@@ -56,8 +64,15 @@ namespace AK
 
     namespace GAME_PARAMETERS
     {
+        static const AkUniqueID CLIMA = 1819394459U;
         static const AkUniqueID HEALTH = 3677180323U;
     } // namespace GAME_PARAMETERS
+
+    namespace BANKS
+    {
+        static const AkUniqueID INIT = 1355168291U;
+        static const AkUniqueID MAINSOUNDBANK = 534561221U;
+    } // namespace BANKS
 
     namespace BUSSES
     {
